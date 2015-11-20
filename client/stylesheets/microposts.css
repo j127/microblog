@@ -1,3 +1,14 @@
 body {
     margin-top: 71px;
 }
+img {
+    width: 100%;
+}
+.post {
+    margin-bottom: 19px;
+    padding-bottom: 19px;
+    border-bottom: solid #ccc 1px;
+}
+.post:last-child {
+    border: 0;
+}
