@@ -4,5 +4,11 @@
 
 <template name="layout">
     {{> navbar}}
-    {{> yield}}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                {{> yield}}        
+            </div>
+        </div>
+    </div>
 </template>
