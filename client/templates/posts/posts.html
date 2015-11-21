@@ -1,7 +1,9 @@
 <template name="posts">
+    {{#if currentUser}}
     <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#postModal">
         Say Something
     </button>
+    {{/if}}
 
     <div class="modal fade" id="postModal" tabindex="-1" role="dialog" aria-labelledby="myPostModalLabel">
         <div class="modal-dialog" role="document">
