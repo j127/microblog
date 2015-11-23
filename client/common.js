@@ -4,7 +4,7 @@ Meteor.subscribe('UserImages');
 
 Meteor.startup(function () {
     AccountsEntry.config({
-        homeRoute: '/', // mandatory - path to redirect to after sign-out
+        homeRoute: '/', // path to redirect to after sign-out
         dashboardRoute: '/',
         passwordSignupFields: 'USERNAME_AND_EMAIL'
     });
@@ -15,12 +15,15 @@ Meteor.startup(function () {
 });
 
 Template.registerHelper('getProfileImg', function (userId) {
-    var imgUrl = UserImages.findOne({userId: userId}) || null;
-    if (imgUrl && imgUrl.image) {
-        imgUrl = imgUrl.image;
+    var imgObj = UserImages.findOne({userId: userId}) || null;
+
+    console.log('Running Template.registerHelper("getProfileImg") with userId: ' + userId);
+    console.log('imgObj', imgObj);
+    console.log('imgObj.image', imgObj.image);
+
+    if (imgObj && imgObj.image) {
+        imgUrl = imgObj.image;
+        console.log('imgUrl', imgUrl);
     }
-    console.log('Running Template.registerHelper("getProfileImg")');
-    console.log('imgUrl', imgUrl);
-    console.log('imgUrl.image', imgUrl.image);
     return imgUrl || '/img/pic.png';
 });
