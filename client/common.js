@@ -19,6 +19,8 @@ Template.registerHelper('getProfileImg', function (userId) {
     if (imgUrl && imgUrl.image) {
         imgUrl = imgUrl.image;
     }
-
+    console.log('Running Template.registerHelper("getProfileImg")');
+    console.log('imgUrl', imgUrl);
+    console.log('imgUrl.image', imgUrl.image);
     return imgUrl || '/img/pic.png';
 });
